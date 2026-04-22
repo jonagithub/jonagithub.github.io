@@ -1,26 +1,31 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SiteFrame } from "../components/SiteFrame";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
+    <SiteFrame>
+      <div className="flex-1 flex items-center justify-center p-12">
+        <div className="max-w-md text-center">
+          <p className="font-mono text-[11px] text-accent uppercase tracking-widest mb-4">
+            ERR.404
+          </p>
+          <h1 className="font-display text-7xl font-bold uppercase tracking-tighter">
+            Not Found
+          </h1>
+          <p className="mt-4 text-sm text-slate">
+            This route is not registered in the system.
+          </p>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="mt-8 inline-flex items-center gap-2 bg-ink text-surface px-5 py-3 font-mono text-xs uppercase tracking-widest hover:bg-accent transition-colors"
           >
-            Go home
+            Return to Index →
           </Link>
         </div>
       </div>
-    </div>
+    </SiteFrame>
   );
 }
 
@@ -29,19 +34,29 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Jonathan Rai — AI/ML Engineer" },
+      {
+        name: "description",
+        content:
+          "Jonathan Rai — AI/ML Engineer building OCR, NLP, RAG and AI agent systems with Python, PyTorch, LangGraph and CrewAI.",
+      },
+      { name: "author", content: "Jonathan Rai" },
+      { property: "og:title", content: "Jonathan Rai — AI/ML Engineer" },
+      {
+        property: "og:description",
+        content:
+          "Portfolio of Jonathan Rai — 2+ years engineering OCR, NLP, RAG and agentic AI systems.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
     ],
   }),
@@ -65,5 +80,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <SiteFrame>
+      <Outlet />
+    </SiteFrame>
+  );
 }

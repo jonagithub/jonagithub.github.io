@@ -1,26 +1,230 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Jonathan Rai — AI/ML Engineer" },
+      {
+        name: "description",
+        content:
+          "AI/ML Engineer with 2+ years building OCR, NLP, RAG pipelines and autonomous AI agents using Python, PyTorch, LangGraph and CrewAI.",
+      },
+      { property: "og:title", content: "Jonathan Rai — AI/ML Engineer" },
+      {
+        property: "og:description",
+        content:
+          "AI/ML Engineer with 2+ years building OCR, NLP, RAG pipelines and autonomous AI agents.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      {/* Hero */}
+      <section className="grid grid-cols-12 border-b border-grid">
+        <aside className="hidden lg:flex col-span-2 border-r border-grid flex-col justify-end p-6 gap-8 bg-paper/40">
+          <div className="space-y-1">
+            <div className="font-mono text-[10px] text-slate uppercase tracking-wider">
+              Experience
+            </div>
+            <div className="font-mono text-xs text-ink">2+ Years</div>
+          </div>
+          <div className="space-y-1">
+            <div className="font-mono text-[10px] text-slate uppercase tracking-wider">
+              Domain
+            </div>
+            <div className="font-mono text-xs text-ink">OCR · NLP · RAG</div>
+          </div>
+          <div className="space-y-1">
+            <div className="font-mono text-[10px] text-slate uppercase tracking-wider">
+              Location
+            </div>
+            <div className="font-mono text-xs text-ink">Kathmandu, NP</div>
+          </div>
+        </aside>
+
+        <div className="col-span-12 lg:col-span-10 flex flex-col">
+          <div className="px-6 lg:px-16 pt-16 lg:pt-24 pb-12 lg:pb-16">
+            <p className="font-mono text-[11px] text-accent uppercase tracking-widest mb-6 flex items-center gap-3">
+              <span className="size-1.5 bg-accent" />
+              Jonathan Rai · AI / ML Engineer
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-[7.5rem] font-bold tracking-tighter leading-[0.85] uppercase text-balance">
+              Designing
+              <br />
+              Intelligence.
+            </h1>
+            <p className="mt-8 font-body text-lg lg:text-2xl font-medium text-ink/80 text-pretty max-w-[50ch] leading-snug">
+              I engineer deterministic systems from probabilistic models — OCR,
+              NLP, RAG and autonomous AI agents in production.
+            </p>
+
+            <div className="mt-12 flex flex-wrap gap-3">
+              <Link
+                to="/projects"
+                className="group inline-flex items-center gap-3 bg-ink text-surface px-6 py-4 font-mono text-xs uppercase tracking-widest hover:bg-accent transition-colors"
+              >
+                View Projects
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 border border-grid px-6 py-4 font-mono text-xs uppercase tracking-widest hover:border-ink transition-colors"
+              >
+                Establish Contact
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 px-6 lg:px-16 border-t border-grid pt-12 pb-16">
+            <div>
+              <h3 className="font-mono text-xs text-accent mb-5 uppercase tracking-widest flex items-center gap-2">
+                <span className="size-2 bg-accent" />
+                Operational Scope
+              </h3>
+              <p className="text-base text-slate text-pretty max-w-[45ch] leading-relaxed">
+                Currently AI Engineer at TAI Inc. Architecting QA testing
+                agents, document verification with fine-tuned YOLO, Japanese
+                driver-license OCR, and RAG-powered Q&A systems. Optimizing
+                Hugging Face models with quantization and LoRA fine-tuning.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-mono text-xs text-ink mb-5 uppercase tracking-widest flex items-center gap-2">
+                <span className="size-2 border border-ink" />
+                Technical Capabilities
+              </h3>
+              <ul className="font-mono text-sm">
+                {[
+                  ["Vector Search & RAG", "IDX-01"],
+                  ["Computer Vision & OCR", "IDX-02"],
+                  ["Agentic Workflows", "IDX-03"],
+                  ["LLM Fine-Tuning", "IDX-04"],
+                ].map(([label, id]) => (
+                  <li
+                    key={id}
+                    className="flex justify-between items-center border-b border-grid py-2.5"
+                  >
+                    <span className="text-ink">{label}</span>
+                    <span className="text-slate tabular-nums text-xs">{id}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats strip */}
+      <section className="grid grid-cols-2 lg:grid-cols-4 border-b border-grid">
+        {[
+          { v: "2+", l: "Years in Production" },
+          { v: "9", l: "Shipped Projects" },
+          { v: "7", l: "Certifications" },
+          { v: "1", l: "Engineer · Many Models" },
+        ].map((s, i) => (
+          <div
+            key={s.l}
+            className={`p-6 lg:p-10 ${i < 3 ? "border-r border-grid" : ""} ${
+              i < 2 ? "border-b lg:border-b-0 border-grid" : ""
+            }`}
+          >
+            <div className="font-display text-5xl lg:text-7xl font-bold tracking-tighter tabular-nums">
+              {s.v}
+            </div>
+            <div className="mt-3 font-mono text-[10px] text-slate uppercase tracking-widest">
+              {s.l}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Featured projects */}
+      <section className="grid grid-cols-12 border-b border-grid">
+        <div className="col-span-12 lg:col-span-2 border-r border-grid p-6 bg-paper/40">
+          <span className="font-mono text-[10px] text-accent uppercase tracking-widest">
+            § 02 / Selected Work
+          </span>
+        </div>
+        <div className="col-span-12 lg:col-span-10 divide-y divide-grid">
+          {FEATURED.map((p) => (
+            <Link
+              key={p.title}
+              to="/projects"
+              className="group grid grid-cols-12 items-center px-6 lg:px-12 py-6 lg:py-8 hover:bg-paper/60 transition-colors"
+            >
+              <span className="col-span-2 lg:col-span-1 font-mono text-[10px] text-slate tabular-nums">
+                {p.no}
+              </span>
+              <span className="col-span-10 lg:col-span-5 font-display text-xl lg:text-2xl font-semibold tracking-tight">
+                {p.title}
+              </span>
+              <span className="hidden lg:block col-span-4 font-mono text-[11px] text-slate uppercase tracking-widest">
+                {p.stack}
+              </span>
+              <span className="hidden lg:flex col-span-2 justify-end font-mono text-[11px] text-ink uppercase tracking-widest">
+                <span className="group-hover:text-accent transition-colors">
+                  View →
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="grid grid-cols-12">
+        <Link
+          to="/contact"
+          className="col-span-12 lg:col-span-8 group flex items-center justify-between p-8 lg:px-16 lg:py-12 bg-ink text-surface hover:bg-accent transition-colors"
+        >
+          <span className="font-display text-2xl lg:text-4xl font-bold tracking-tight uppercase">
+            Let&apos;s build something intelligent.
+          </span>
+          <span className="hidden sm:inline-flex font-mono text-xs border border-surface/30 px-3 py-1.5 group-hover:border-surface gap-2">
+            CONTACT →
+          </span>
+        </Link>
+        <Link
+          to="/about"
+          className="col-span-12 lg:col-span-4 group flex items-center justify-between p-8 lg:px-10 lg:py-12 border-t lg:border-t-0 lg:border-l border-grid hover:bg-paper transition-colors"
+        >
+          <span className="font-display text-lg lg:text-xl font-medium uppercase tracking-tight">
+            About the engineer
+          </span>
+          <span className="font-mono text-[10px] text-slate uppercase tracking-widest group-hover:text-ink">
+            [ Read ]
+          </span>
+        </Link>
+      </section>
+    </>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
-}
+const FEATURED = [
+  {
+    no: "01",
+    title: "QA Testing Automation Agent",
+    stack: "LangGraph · Playwright · FastAPI",
+  },
+  {
+    no: "02",
+    title: "Japanese Driving License OCR",
+    stack: "PaddleOCR · OpenCV · Streamlit",
+  },
+  {
+    no: "03",
+    title: "Document Verification System",
+    stack: "YOLO · Roboflow · Python",
+  },
+  {
+    no: "04",
+    title: "Chat with Multiple PDFs (RAG)",
+    stack: "LangChain · Groq · VectorDB",
+  },
+];
