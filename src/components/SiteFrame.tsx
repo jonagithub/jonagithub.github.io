@@ -109,7 +109,7 @@ export function SiteFrame({ children }: { children: ReactNode }) {
           <div className="col-span-6 lg:col-span-4 p-4 flex items-center justify-end">
             <a
               href="mailto:jonathan.raia40@gmail.com"
-              className="font-mono text-[11px] text-ink uppercase tracking-widest hover:text-accent transition-colors"
+              className="font-mono text-[11px] text-ink tracking-widest hover:text-accent transition-colors normal-case"
             >
               jonathan.raia40@gmail.com
             </a>

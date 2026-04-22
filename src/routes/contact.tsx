@@ -75,7 +75,7 @@ function ContactPage() {
                   <span className="col-span-3 lg:col-span-2 font-mono text-xs text-accent uppercase tracking-widest">
                     {c.label}
                   </span>
-                  <span className="col-span-12 lg:col-span-7 mt-2 lg:mt-0 font-display text-lg lg:text-2xl font-semibold tracking-tight text-ink truncate">
+                  <span className="col-span-12 lg:col-span-7 mt-2 lg:mt-0 font-display text-lg lg:text-2xl font-semibold tracking-tight text-ink truncate normal-case lowercase">
                     {c.value}
                   </span>
                   <span className="hidden lg:flex col-span-1 justify-end font-mono text-sm text-ink group-hover:text-accent group-hover:translate-x-1 transition-all">
