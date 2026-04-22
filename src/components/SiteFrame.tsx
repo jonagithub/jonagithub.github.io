@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Index", id: "00" },
