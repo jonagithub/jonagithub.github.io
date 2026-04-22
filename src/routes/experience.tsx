@@ -8,7 +8,7 @@ export const Route = createFileRoute("/experience")({
       {
         name: "description",
         content:
-          "Work history of Jonathan Rai: AI Engineer at TAI Inc, Associate Software Engineer at Deerwalk Services, Backend Intern at Mark Fifty.",
+          "Work history of Jonathan Rai: AI Engineer at Japanese IT Company, Associate Software Engineer at Deerwalk Services, Backend Intern at Mark Fifty.",
       },
       { property: "og:title", content: "Experience — Jonathan Rai" },
       {
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/experience")({
 
 const ROLES = [
   {
-    company: "TAI Inc",
+    company: "Confidential AI Startup",
     title: "AI Engineer",
     period: "Dec 2023 — Present",
     current: true,
@@ -38,7 +38,7 @@ const ROLES = [
     ],
   },
   {
-    company: "TAI Inc",
+    company: "Confidential AI Startup",
     title: "AI Engineer Intern",
     period: "Sept 2023 — Dec 2023",
     bullets: [

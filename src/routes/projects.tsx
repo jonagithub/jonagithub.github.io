@@ -37,7 +37,7 @@ const PROJECTS: Project[] = [
   {
     no: "01",
     title: "QA Testing Automation Agent",
-    org: "TAI Inc",
+    org: "Confidential AI Startup",
     year: "2024",
     team: "3 members",
     role: "AI Engineer",
@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
   {
     no: "02",
     title: "Document Verification System",
-    org: "TAI Inc",
+    org: "Confidential AI Startup",
     year: "2024",
     team: "3 members",
     role: "AI Engineer",
@@ -61,7 +61,7 @@ const PROJECTS: Project[] = [
   {
     no: "03",
     title: "Japanese Driving License OCR",
-    org: "TAI Inc",
+    org: "Confidential AI Startup",
     year: "2024",
     team: "Individual",
     role: "AI Engineer",
@@ -73,7 +73,7 @@ const PROJECTS: Project[] = [
   {
     no: "04",
     title: "Next-Word Suggestion for Nepali Text",
-    org: "TAI Inc",
+    org: "Confidential AI Startup",
     year: "2023",
     team: "Individual",
     role: "AI Engineer Intern",
@@ -146,7 +146,7 @@ function ProjectsPage() {
         index="02"
         label="Projects"
         title="Selected work, 2020 — 2025."
-        description="A catalogue of shipped systems across OCR, NLP, RAG, autonomous agents and classical ML. Mix of enterprise work at TAI Inc and personal research."
+        description="A catalogue of shipped systems across OCR, NLP, RAG, autonomous agents and classical ML. Mix of enterprise work at Confidential AI Startup and personal research."
       />
 
       <section className="divide-y divide-grid">

@@ -88,7 +88,7 @@ function Index() {
                 Operational Scope
               </h3>
               <p className="text-base text-slate text-pretty max-w-[45ch] leading-relaxed">
-                Currently AI Engineer at TAI Inc. Architecting QA testing
+                Currently AI Engineer at Confidential AI Startup. Architecting QA testing
                 agents, document verification with fine-tuned YOLO, Japanese
                 driver-license OCR, and RAG-powered Q&A systems. Optimizing
                 Hugging Face models with quantization and LoRA fine-tuning.
