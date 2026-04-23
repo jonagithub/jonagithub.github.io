@@ -28,7 +28,7 @@ const ROLES = [
     period: "Dec 2023 — Present",
     current: true,
     bullets: [
-      "Developed a QA Testing Agent pipeline to auto-generate Playwright scripts, execute UI tests, and create Allure reports.",
+      "Built an AI-powered QA Testing platform to auto-generate Playwright scripts, execute UI tests, and generate Allure reports.",
       "Implemented document verification by fine-tuning YOLO on a custom image dataset to validate uploaded documents.",
       "Built a Japanese Driving License OCR system for data extraction and export in CSV, JSON, and Excel.",
       "Implemented Retrieval-Augmented Generation (RAG) pipelines for Q&A systems.",
