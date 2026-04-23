@@ -23,7 +23,7 @@ export const Route = createFileRoute("/experience")({
 
 const ROLES = [
   {
-    company: "Confidential AI Startup",
+    company: "Confidential – Leading IT Company in Nepal",
     title: "AI Engineer",
     period: "Dec 2023 — Present",
     current: true,
@@ -38,7 +38,7 @@ const ROLES = [
     ],
   },
   {
-    company: "Confidential AI Startup",
+    company: "Confidential – Leading IT Company in Nepal",
     title: "AI Engineer Intern",
     period: "Sept 2023 — Dec 2023",
     bullets: [
